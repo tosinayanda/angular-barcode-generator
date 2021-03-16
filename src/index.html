@@ -1,13 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>ClientApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <head>
+    <meta charset="utf-8" />
+    <title>Barcode Generator</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="https://gwc-bkt.s3-ap-south-1.amazonaws.com/task_images/UkCk1597240108774-faviconsavein32x32.png">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" 
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.9.0/JsBarcode.all.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/jsbarcode/3.3.20/JsBarcode.all.min.js"></script> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <script src="assets/js/leaflet.js"></script> -->
+    <!-- <script src="assets/js/moment.min.js"></script> -->
+    <style> 
+        #loader {
+          transition: all 0.3s ease-in-out;
+          opacity: 1;
+          visibility: visible;
+          position: fixed;
+          height: 100vh;
+          width: 100%;
+          background: #fff;
+          z-index: 90000;
+        }
+        .loading-screen-icon {
+        /* width: 100px;
+        height: 100px; */
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        /* border-radius: 50%; */
+      }
+        #loader.fadeOut {
+          opacity: 0;
+          visibility: hidden;
+        }
+</style>
+
 </head>
-<body>
-  <app-root></app-root>
-</body>
+  <body>
+      <div id='loader'>
+          <img src="assets/images/dooplogo.png" class="loading-screen-icon animated infinite pulse delay-1s" height="50"/>
+    </div>
+  
+      <script>
+        window.addEventListener('load', function load() {
+          const loader = document.getElementById('loader');
+          setTimeout(function() {
+            loader.classList.add('fadeOut');
+          }, 500);
+        });
+      </script>
+      
+    <app-root>
+      <!-- <div id='loader'>
+        <img src="assets/images/ledd-main-icon.png" class="loading-screen-icon animated infinite pulse delay-1s" height="50"/>
+    </div> -->
+</app-root>
+  </body>
 </html>
